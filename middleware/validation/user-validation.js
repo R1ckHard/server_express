@@ -8,7 +8,13 @@ const schema = Joi.object({
         .required(),
     password: Joi.string()
         .pattern(/^[a-zA-Z0-9]{3,30}$/),
-
-
+    name: Joi.string()
+        .alphanum()
+        .min(3)
+        .max(20),
+    surname: Joi.string()
+        .alphanum()
+        .min(3)
+        .max(20)
 })
 module.exports = schema;
