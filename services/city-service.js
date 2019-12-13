@@ -1,4 +1,4 @@
-const City = require('../modules/city-module');
+const City = require('../models/city-model');
 
 const get =  function () {
     return City.find({})

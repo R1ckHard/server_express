@@ -1,4 +1,4 @@
-const User = require('../modules/user-module');
+const User = require('../models/user-model');
 const helperCrypt = require('../helperCrypt');
 
 const get = async function (id) {
