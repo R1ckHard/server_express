@@ -11,21 +11,26 @@ const checkToken = async function (req, res, next) {
     }
 
     try {
-        const token = authHeader.replace('Bearer ', '');
-        const user = await User.findById(await jwt.verify(token, jwtSecret));
+        const token = await authHeader.replace('Bearer ', '');
+        const userID = await jwt.verify(token, jwtSecret);
+        const user = await User.findById(userID);
         req.user = user;
-        if (!user) {
-            throw new Error();
+        if (!userID) {
+            throw new Error("problems with auth");
         }
-        if (user === req.params.id) {
+        // if (user === req.params.id) {
+        //     next()
+        // }
+        // else if (userID === adminID) {
+        //     next()
+        // } else {
+        //     throw new Error('У вас нет доступа')
+        // }
+        else {
             next()
-        } else if (user === adminID) {
-            next()
-        } else {
-            throw new Error('У вас нет доступа')
         }
     } catch (e) {
-        res.status(400).send({error: e.message})
+        res.status(400).send({error: e.message + 'asdsf'})
     }
 }
 

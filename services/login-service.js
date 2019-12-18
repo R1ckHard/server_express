@@ -14,10 +14,7 @@ const logIn = async function (body) {
 
     if (isValid) {
         const token = jwt.sign(user._id.toString(), jwtSecret);
-        return {
-            "token": token,
-            "userData": user
-        }
+        return token
     } else {
         throw new Error("Неправильный пароль")
     }
