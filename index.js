@@ -6,6 +6,7 @@ const cityRouter = require('./routers/city-router')
 const signUpRouter = require('./routers/login-router')
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger');
+const registration = require('./routers/registration-rourer')
 const cors = require('cors')
 
 const mongoose = require('mongoose');
@@ -21,10 +22,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use('/users',userRouter);
+// app.use('/users',userRouter);
 app.use('/city',cityRouter)
 app.use('/login',signUpRouter)
 app.use('/myPage',myPage)
+app.use('/registration',registration)
+
 
 
 
