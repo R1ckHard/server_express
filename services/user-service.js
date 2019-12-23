@@ -45,11 +45,13 @@ const add = async function (body) {
 
 }
 
-const update = async function (body, id) {
+const update = async function (body) {
+    const userPass = body.password;
+    body.password = await helperCrypt.createHash(userPass);
     const checkUnique = await User.findOne({login: body.login});
     if (!checkUnique) {
         await User.updateOne(
-            {"_id": id},
+            {"_id": checkUnique._id},
             {
                 $set:
                     {...body}

@@ -9,11 +9,11 @@ const checkToken  = require('../middleware/auth/auth.js');
 
 const router = new express.Router();
 
-router.get('/:id',checkToken,user_controller.getUser);
+// router.get('/:id',checkToken,user_controller.getUser);
+// router.post('/',checkUser(userSchema),user_controller.addUser);
 router.get('/',checkToken,user_controller.getUser);
-router.post('/',checkUser(userSchema),user_controller.addUser);
-router.put('/:id',checkToken,user_controller.updateUser);
-router.delete('/:id',checkToken,user_controller.deleteUser);
+router.put('/',user_controller.updateUser);
+router.delete('/',user_controller.deleteUser);
 
 module.exports =router;
 

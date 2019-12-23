@@ -6,13 +6,12 @@ class UserController {
 
     getUser = async (req, res) => {
         try {
-            const result = await service.get(req.params.id);
-            res.status(200).send(result)
-        } catch (e) {
-            res.status(400).send({error: e.message})
+            res.send(req.user);
         }
-
-    };
+        catch (e) {
+            res.status(400).send({error: e.message+'getUser Error'})
+        }
+    }
     addUser = async (req, res) => {
         try {
             const result = await service.add(req.body);
@@ -24,7 +23,8 @@ class UserController {
     };
     updateUser = async (req, res) => {
         try {
-            const result = await service.update(req.body, req.params.id);
+            console.log(req.user);
+            const result = await service.update(req.body);
             res.status(202).send(result)
         } catch (e) {
             res.status(400).send({error: e.message})
@@ -32,7 +32,7 @@ class UserController {
     };
     deleteUser = async (req, res) => {
         try {
-            const result = await service.del(req.params.id);
+            const result = await service.del(req.user._id);
             res.status(202).send(result)
         } catch (e) {
             res.status(400).send({error: e.message})

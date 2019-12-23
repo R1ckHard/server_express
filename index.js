@@ -26,6 +26,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/city',cityRouter)
 app.use('/login',signUpRouter)
 app.use('/myPage',myPage)
+app.use('/settings',userRouter)
 app.use('/registration',registration)
 
 
