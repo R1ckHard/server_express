@@ -12,8 +12,8 @@ const router = new express.Router();
 // router.get('/:id',checkToken,user_controller.getUser);
 // router.post('/',checkUser(userSchema),user_controller.addUser);
 router.get('/',checkToken,user_controller.getUser);
-router.put('/',user_controller.updateUser);
-router.delete('/',user_controller.deleteUser);
+router.put('/',checkToken,user_controller.updateUser);
+router.delete('/',checkToken,user_controller.deleteUser);
 
 module.exports =router;
 
