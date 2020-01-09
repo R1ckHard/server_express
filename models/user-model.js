@@ -15,10 +15,15 @@ const userSchema = new mongoose.Schema({
         surname: {
             type: String
 
+        },
+        Image: {
+            type: String
         }
     },
-    {versionKey: false}
-)
+    {
+        versionKey: false
+    });
+
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
