@@ -5,6 +5,7 @@ const checkUser = require(`../middleware/validation/common-validation`);
 const userSchema = require('../middleware/validation/user-validation');
 const checkToken = require('../middleware/auth/auth.js');
 const multer = require('multer');
+const ImageRouter = express.Router();
 
 
 const storage = multer.diskStorage({
@@ -29,6 +30,23 @@ const upload = multer({
         fileSize: 1024 * 1024 * 5
     },
     fileFilter: fileFilter
+});
+
+ImageRouter.route("/uploadmulter").post(upload.single('imageData'),(req,res,next)=>{
+    console.log(req.body)
+    const newImage = new Image({
+        imageName:req.body.imageName,
+        imageData:req.file.path
+    });
+    newImage.save()
+        .then((result) => {
+            console.log(result)
+            res.status(200).json({
+                success:true,
+                document:result
+            })
+        })
+        .catch((err)=>next(err))
 })
 const router = new express.Router();
 
@@ -37,6 +55,7 @@ const router = new express.Router();
 router.get('/', checkToken, user_controller.getUser);
 router.put('/', checkToken, user_controller.updateUser);
 router.delete('/', checkToken, user_controller.deleteUser);
+router.post('/uploadImage', checkToken, upload.single('userImage'), user_controller.updateImage);
 
 module.exports = router;
 

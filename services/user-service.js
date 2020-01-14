@@ -55,8 +55,18 @@ const update = async function (body,user) {
                 {...body}
         }
     )
-    return User.find({})
+    return User.find({"_id": user._id})
 
+
+};
+const updateImage = async (req) => {
+    let filedata = req.file;
+    if (!filedata) {
+        throw new Error("Ошибка при загрузке файла");
+    } else {
+        let userUpdate = await userModel.findOneAndUpdate({ login: req.user.login }, { userImage: req.file.path }, { new: true });
+        return userUpdate
+    }
 
 };
 const del = async function (id) {
