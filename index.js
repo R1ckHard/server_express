@@ -24,9 +24,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/users',userRouter);
-app.use('/uploads/',express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({limit:'150mb',extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use('/city',cityRouter)
 app.use('/login',signUpRouter)
 app.use('/myPage',myPage);

@@ -5,6 +5,9 @@ const get = async function (id) {
     if (id) {
         return User.findOne({_id: id})
     }
+    else {
+        console.log('Error get method');
+    }
     // const result = await User.aggregate([
     //     {
     //         $lookup: {
@@ -24,7 +27,6 @@ const get = async function (id) {
     // }
     // ])
     // return result
-    return User.find({})
 
 }
 
@@ -60,12 +62,13 @@ const update = async function (body,user) {
 
 };
 const updateImage = async (req) => {
-    let filedata = req.file;
-    if (!filedata) {
+    console.log(req.file.path)
+    let file = req.file;
+    if (!file) {
         throw new Error("Ошибка при загрузке файла");
     } else {
-        let userUpdate = await userModel.findOneAndUpdate({ login: req.user.login }, { userImage: req.file.path }, { new: true });
-        return userUpdate
+        let updateImage = await User.findOneAndUpdate({ login: req.user.login }, { image: req.file.path }, { new: true });
+        return updateImage
     }
 
 };
@@ -82,4 +85,5 @@ module.exports = {
     add,
     update,
     del,
+    updateImage
 }
