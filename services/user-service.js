@@ -62,7 +62,7 @@ const update = async function (body,user) {
 
 };
 const updateImage = async (req) => {
-    console.log(req.file.path)
+    console.log(req.file);
     let file = req.file;
     if (!file) {
         throw new Error("Ошибка при загрузке файла");
