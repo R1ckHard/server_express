@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const userRouter = require('./routers/user-router')
+const getAllUsers = require('./routers/getAllUsers')
 const myPage = require('./routers/myPage-router')
 const cityRouter = require('./routers/city-router')
 const signUpRouter = require('./routers/login-router')
@@ -9,8 +10,8 @@ const swaggerDocument = require('./swagger');
 const registration = require('./routers/registration-rourer')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.connect("mongodb://localhost:27017/test", {
     useNewUrlParser: true,
@@ -32,8 +33,9 @@ app.use('/login',signUpRouter)
 app.use('/myPage',myPage);
 app.use('/settings',userRouter)
 app.use('/registration',registration)
+app.use('/',getAllUsers)
 
-
+console.log(process.env.PORT);
 
 
 app.listen(8000, function () {

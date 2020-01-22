@@ -1,13 +1,9 @@
 const User = require('../models/user-model');
 const helperCrypt = require('../helperCrypt');
 
-const get = async function (id) {
-    if (id) {
-        return User.findOne({_id: id})
-    }
-    else {
-        console.log('Error get method');
-    }
+const get = async function () {
+        return User.find({})
+
     // const result = await User.aggregate([
     //     {
     //         $lookup: {
@@ -27,7 +23,6 @@ const get = async function (id) {
     // }
     // ])
     // return result
-
 }
 
 const add = async function (body) {
@@ -57,7 +52,7 @@ const update = async function (body,user) {
                 {...body}
         }
     )
-    return User.find({"_id": user._id})
+    return  User.findOne({"_id": user._id})
 
 
 };

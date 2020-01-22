@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e879c40e-d830-4787-9286-deaf0e4c6b87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/getAllUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/user-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/user-router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user-controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user-controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user-model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user-model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user-service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +55,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/uploads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -171,7 +176,9 @@
       <workItem from="1579167139446" duration="548000" />
       <workItem from="1579170264351" duration="6387000" />
       <workItem from="1579185639979" duration="2381000" />
-      <workItem from="1579519750381" duration="6559000" />
+      <workItem from="1579519750381" duration="6676000" />
+      <workItem from="1579597834364" duration="740000" />
+      <workItem from="1579599203121" duration="10387000" />
     </task>
     <task id="LOCAL-00001" summary="modules,middleware">
       <created>1576150817240</created>
@@ -229,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579189132934</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="buf fix">
+      <created>1579537655347</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579537655347</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +271,8 @@
     <MESSAGE value="create addImage route" />
     <MESSAGE value="fix" />
     <MESSAGE value="add image router" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image router" />
+    <MESSAGE value="buf fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="buf fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="201" width="800" height="684" key="#Menus_and_Toolbars" timestamp="1576663730897">
@@ -272,11 +287,11 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="629" y="214" width="652" height="686" key="#index.js/0.27.1920.1053@0.27.1920.1053" timestamp="1576238287608" />
-    <state x="432" y="61" width="864" height="989" key="CommitChangelistDialog2" timestamp="1579537618321">
+    <state x="432" y="61" width="864" height="989" key="CommitChangelistDialog2" timestamp="1579537655241">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="494" y="37" width="922" height="987" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1577105104955" />
-    <state x="432" y="61" width="864" height="989" key="CommitChangelistDialog2/0.27.1680.1023@0.27.1680.1023" timestamp="1579537618321" />
+    <state x="432" y="61" width="864" height="989" key="CommitChangelistDialog2/0.27.1680.1023@0.27.1680.1023" timestamp="1579537655241" />
     <state x="494" y="63" width="922" height="987" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1577888937162" />
     <state x="474" y="61" width="864" height="989" key="CommitChangelistDialog2/56.27.1624.1023@56.27.1624.1023" timestamp="1579011985268" />
     <state x="493" y="211" width="924" height="691" key="DBNavigator.ProjectSettingsDialog" timestamp="1575286395749">
@@ -318,11 +333,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="449" y="175" width="1022" height="737" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1574762210438" />
-    <state x="485" y="278" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1579189134674">
+    <state x="485" y="278" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1579537657246">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="555" y="265" width="800" height="543" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1577105151507" />
-    <state x="485" y="278" key="Vcs.Push.Dialog.v2/0.27.1680.1023@0.27.1680.1023" timestamp="1579189134674" />
+    <state x="485" y="278" width="800" height="543" key="Vcs.Push.Dialog.v2/0.27.1680.1023@0.27.1680.1023" timestamp="1579537657246" />
     <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1576150823920" />
     <state x="525" y="278" width="800" height="543" key="Vcs.Push.Dialog.v2/56.27.1624.1023@56.27.1624.1023" timestamp="1579011995860" />
     <state x="100" y="100" width="1720" height="880" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1574769431677">

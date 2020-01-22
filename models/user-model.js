@@ -17,7 +17,8 @@ const userSchema = new mongoose.Schema({
 
         },
         image: {
-            type: String
+            type: String,
+            default:'uploads/default-user-image-png-7.png'
         }
     },
     {
