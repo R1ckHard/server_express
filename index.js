@@ -13,7 +13,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect("mongodb://localhost:27017/test", {
+mongoose.connect(process.env.MONGO_DB_HOST, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
