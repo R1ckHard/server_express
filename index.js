@@ -12,6 +12,11 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 require('dotenv').config();
+const fs = require('fs');
+
+if (!fs.existsSync('./uploads')){
+    fs.mkdirSync('./uploads');
+}
 
 mongoose.connect(process.env.MONGO_DB_HOST, {
     useNewUrlParser: true,
